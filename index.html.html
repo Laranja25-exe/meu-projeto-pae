@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAE • Boca do Povo</title>
+  <style>
+    :root{
+      --bg:#f7f8fa;
+      --surface:#ffffff;
+      --ink:#0f172a;            /* slate-900 */
+      --muted:#475569;          /* slate-600 */
+      --primary:#0ea5e9;        /* azul */
+      --success:#22c55e;        /* verde */
+      --danger:#ef4444;         /* vermelho */
+      --ring:#e2e8f0;           /* slate-200 */
+      --card:#ffffff;
+    }
+    html,body{height:100%}
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink); background:var(--bg);
+    }
+    .container{width:min(1120px, 92vw); margin-inline:auto}
+    .section{padding:56px 0}
+
+    /* Header / Hero */
+    .hero{padding:72px 0}
+    .badge{display:inline-block; padding:6px 12px; border:1px solid var(--ring); border-radius:999px; background:#fff; color:var(--muted); font-weight:600; letter-spacing:.3px}
+    .title{font-size: clamp(28px, 4.6vw, 56px); line-height:1.05; margin:12px 0 10px; font-weight:800}
+    .subtitle{font-size: clamp(16px, 2.4vw, 22px); color:var(--muted); max-width:60ch}
+
+    /* Cards base */
+    .grid{display:grid; gap:20px}
+    .grid.cols-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    @media (max-width: 900px){
+      .grid.cols-3{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .grid.cols-3,.grid.cols-2{grid-template-columns: 1fr}
+    }
+    .card{background:var(--card); border:1px solid var(--ring); border-radius:18px; padding:22px; box-shadow:0 1px 0 rgba(15,23,42,.04)}
+    .card h3{margin:0 0 6px; font-size:20px}
+    .card p{margin:0; color:var(--muted)}
+
+    /* Section titles */
+    .stitle{font-size: clamp(22px, 3.2vw, 36px); margin:0 0 18px; font-weight:800}
+    .lead{color:var(--muted); max-width:70ch}
+
+    /* Accent list (01/02/03) */
+    .kpi{display:flex; align-items:center; gap:12px; font-weight:800}
+    .pill{display:inline-grid; place-items:center; width:38px; height:38px; border-radius:12px; color:#fff; font-weight:900}
+    .pill.blue{background:var(--primary)}
+    .pill.green{background:var(--success)}
+    .pill.red{background:var(--danger)}
+
+    /* Actors */
+    .actor{display:flex; gap:12px; align-items:flex-start}
+    .icon{
+      width:40px; height:40px; border-radius:12px; display:inline-grid; place-items:center; color:#fff; font-weight:900
+    }
+    .icon.blue{background:var(--primary)}
+    .icon.green{background:var(--success)}
+    .icon.red{background:var(--danger)}
+
+    /* Split blocks */
+    .split{display:grid; gap:28px; grid-template-columns: 1.1fr .9fr}
+    @media (max-width: 900px){.split{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{padding:36px 0 72px; color:var(--muted)}
+    .logo{font-weight:900; letter-spacing:.3px}
+    .muted{color:var(--muted)}
+
+    /* Buttons */
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:12px; font-weight:700}
+    .btn.primary{background:var(--primary); color:#fff}
+    .btn.ghost{background:#fff; color:var(--ink); border:1px solid var(--ring)}
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">PAE</span>
+      <h1 class="title">Boca do povo</h1>
+      <p class="subtitle">Agregando valor através de fiscalização contínua e centralizada.</p>
+      <div class="actions" style="margin-top:18px">
+        <a class="btn primary" href="#problema">Ver problema</a>
+        <a class="btn ghost" href="#valores">Ver valores</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEMA -->
+  <section id="problema" class="section">
+    <div class="container split">
+      <div>
+        <h2 class="stitle">Qual é o problema?</h2>
+        <p class="lead">Atualmente as reclamações para os prestadores de serviços são feitas por e-mail ou WhatsApp diretamente aos prestadores. Isso dificulta a fiscalização da satisfação pelo órgão público e dispersa evidências e métricas.</p>
+        <div class="grid cols-2" style="margin-top:18px">
+          <div class="card"><h3>Dados dispersos</h3><p>Histórico pulverizado entre canais dificulta rastreabilidade.</p></div>
+          <div class="card"><h3>Baixa transparência</h3><p>Sem painel único para mensurar satisfação e SLA.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="height:100%">
+          <h3 style="margin-bottom:10px">Objetivo do PAE</h3>
+          <p class="muted">Centralizar registros, padronizar categorias e oferecer um painel de fiscalização contínua para governo, prestadores e cidadãos.</p>
+          <div style="display:grid; gap:12px; margin-top:16px">
+            <div class="kpi"><span class="pill blue">01</span> Impacto social</div>
+            <div class="kpi"><span class="pill green">02</span> Econômico</div>
+            <div class="kpi"><span class="pill red">03</span> Governamental</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section id="valores" class="section" style="padding-top:0">
+    <div class="container">
+      <h2 class="stitle">Valores da ideia</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="kpi" style="margin-bottom:10px"><span class="pill blue">01</span> Impacto social</div>
+          <h3>Aumentar a satisfação da população com o município</h3>
+          <p>Canal único, simples e auditável para ouvir e resolver.</p>
+        </article>
+        <article class="card">
+          <div class="kpi" style="margin-bottom:10px"><span class="pill green">02</span> Econômico</div>
+          <h3>Mensurar melhor os gastos públicos</h3>
+          <p>Indicadores por categoria, prestador e SLA para priorizar recursos.</p>
+        </article>
+        <article class="card">
+          <div class="kpi" style="margin-bottom:10px"><span class="pill red">03</span> Governamental</div>
+          <h3>Aumentar a qualidade dos serviços públicos</h3>
+          <p>Contratos e fiscalizações orientados por dados e evidências.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATORES -->
+  <section id="atores" class="section">
+    <div class="container">
+      <h2 class="stitle">Atores</h2>
+      <div class="grid cols-3">
+        <div class="card actor">
+          <div class="icon blue">🏛️</div>
+          <div>
+            <h3>Governo municipal</h3>
+            <p>Painel de fiscalização, contratos e indicadores de desempenho.</p>
+          </div>
+        </div>
+        <div class="card actor">
+          <div class="icon green">🛠️</div>
+          <div>
+            <h3>Prestador de Serviço</h3>
+            <p>Fila padronizada de chamados, prazos e comprovação de atendimento.</p>
+          </div>
+        </div>
+        <div class="card actor">
+          <div class="icon red">👤</div>
+          <div>
+            <h3>Cidadão</h3>
+            <p>Registro simples, acompanhamento do status e feedback de satisfação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO PROJETAR / O QUE FAREMOS -->
+  <section id="como" class="section" style="padding-top:0">
+    <div class="container split">
+      <div>
+        <h2 class="stitle">Como projetar?</h2>
+        <div class="grid cols-2">
+          <div class="card"><h3>Descoberta</h3><p>Mapeamento de categorias, fluxo de atendimento e SLAs.</p></div>
+          <div class="card"><h3>Design</h3><p>Padronização de formulários, taxonomia e acessibilidade.</p></div>
+          <div class="card"><h3>Tech</h3><p>API/integrações, autenticação e armazenamento de evidências.</p></div>
+          <div class="card"><h3>Governança</h3><p>Indicadores, relatórios e rotinas de auditoria.</p></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="stitle">O que faremos?</h2>
+        <div class="card">
+          <ul class="muted" style="margin:0; padding-left:18px; line-height:1.8">
+            <li>Central de chamados unificada (web + mobile).</li>
+            <li>Painel de fiscalização com métricas por prestador e categoria.</li>
+            <li>Roteiro de comunicação e prestação de contas ao cidadão.</li>
+            <li>Relatórios exportáveis e trilha de auditoria completa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRANTES -->
+  <section id="integrantes" class="section">
+    <div class="container">
+      <h2 class="stitle">Integrantes</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Cristian Nascimento</h3><p class="muted">Maurício</p></div>
+        <div class="card"><h3>Marcelo de Lima</h3><p class="muted">Silva</p></div>
+        <div class="card"><h3>Campos</h3><p class="muted">Nome</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="logo">PAE • Boca do Povo</div>
+      <div class="muted">Layout HTML inspirado no deck fornecido. Responsivo, com variação de cores por seção (azul, verde, vermelho).</div>
+    </div>
+  </footer>
+</body>
+</html>
